@@ -1,15 +1,20 @@
 
 import classes from './SideBar.module.css';
-import {useNavigate} from "react-router";
+import {useHistory, useLocation} from "react-router";
+import {useEffect, useState} from "react";
 
 const SideBar = () => {
-    const navigate = useNavigate();
-    const onLogOut = () => {
-        localStorage.removeItem('isLoggedIn');
-        navigate('/');
-    }
+    const history = useHistory();
+    const location = useLocation();
 
-    const isLoggedIn = localStorage.getItem('isLoggedIn');
+    const onLogOut = () => {
+        history.push('/');
+    }
+    const [isLoggedIn,setIsLoggedIn] = useState('N');
+
+    useEffect(() => {
+        setIsLoggedIn(location.state ? location.state.isLoggedIn : 'N');
+    },[location]);
 
     return (
         <div className={`${classes.wrapper} row `}>

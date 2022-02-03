@@ -1,18 +1,18 @@
 import {useState} from "react";
-import {useNavigate} from "react-router";
-
+import {useHistory} from "react-router";
 
 const Login = () => {
-
     const [email,setEmail] = useState('');
     const [password,setPassword] = useState('');
-    const navigate = useNavigate();
+    const history = useHistory();
 
     const onSubmit = (event) => {
         event.preventDefault();
         if(email === 'muenster@belegbar.de' && password === 'belegbar.2') {
-            localStorage.setItem('isLoggedIn','Y');
-            navigate('/products');
+            history.push({
+                pathname: '/products',
+                state: {isLoggedIn: 'Y'}
+            });
         }
     }
 
