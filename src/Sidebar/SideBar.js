@@ -26,10 +26,10 @@ const SideBar = () => {
                 {
                     isLoggedIn === 'Y' ? (
                         <ul className="pt-5 mt-5">
-                            <li><a href="#">Produkte<hr/></a></li>
-                            <li><a href="#">Shops</a></li>
-                            <li className="pt-4"><a href="#">Umsätze</a></li>
-                            <li style={{position: 'absolute', bottom: '5%'}}><a href="#" onClick={onLogOut}>Abmelden</a></li>
+                            <li><a href="javascript:void(0)">Produkte<hr/></a></li>
+                            <li><a href="javascript:void(0)">Shops</a></li>
+                            <li className="pt-4"><a href="javascript:void(0)">Umsätze</a></li>
+                            <li style={{position: 'absolute', bottom: '5%'}}><a href="javascript:void(0)" onClick={onLogOut}>Abmelden</a></li>
                         </ul>
                     ) : ''
                 }
