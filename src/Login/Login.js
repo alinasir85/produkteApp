@@ -17,8 +17,9 @@ const Login = () => {
     }
 
     return (
-        <div className="container p-5 float-end mt-5">
-            <form className="card p-5 w-50 text-white"  style={{backgroundColor:'#1a3a43', borderRadius: '3%'}} onSubmit={onSubmit}>
+        <div className="container row">
+            <div className="col-md-4"></div>
+            <form className="card p-5 text-white col-md-7"  style={{backgroundColor:'#1a3a43', borderRadius: '3%'}} onSubmit={onSubmit}>
                 <h2>Anmeldeng</h2>
                 <span>Bitte gib deine E-mail Adresse und dein Passwort ein.</span> <hr/>
                 <div className="form-group">

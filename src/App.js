@@ -1,17 +1,20 @@
-import Products from "./Products/Products";
-import SideBar from "./Sidebar/SideBar";
-import Login from "./Login/Login";
+
+import Sidebar from "./Sidebar/Sidebar";
 import {Redirect, Route, Switch} from "react-router";
+import Products from "./Products/Products";
+import Login from "./Login/Login";
+import React from "react";
 
 function App() {
   return (
     <>
-        <SideBar/>
-        <Switch>
-            <Route path="/products"> <Products/> </Route>
-            <Route exact path="/"> <Login/> </Route>
-            <Redirect to="/" />
-        </Switch>
+        <Sidebar>
+            <Switch>
+                <Route path="/products"> <Products/> </Route>
+                <Route exact path="/"> <Login/> </Route>
+                <Redirect to="/"/>
+            </Switch>
+        </Sidebar>
     </>
   );
 }
