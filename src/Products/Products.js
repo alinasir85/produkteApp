@@ -1,11 +1,18 @@
 import {useEffect, useState} from "react";
 import axios from "axios";
+import {useHistory, useLocation} from "react-router";
 
 const Products = () => {
 
     const [products,setProducts] = useState([]);
+    const location = useLocation();
+    const history = useHistory();
 
     useEffect(()=> {
+        const isLoggedIn = location.state ? location.state.isLoggedIn : "N";
+        if("N" === isLoggedIn) {
+            history.push('/');
+        }
         axios.get('https://0e4ca3nfnc.execute-api.eu-central-1.amazonaws.com/stg/products').then((resp)=>{
             setProducts(resp.data);
         });
