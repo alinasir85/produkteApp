@@ -28,7 +28,7 @@ const Products = () => {
         }
     }
     return(
-        <div className="container p-5">
+        <div className="container" style={{paddingLeft: '3%'}}>
             <div className="pb-4">
                 <span className="h1">Produkte</span><br/>
                 <span>Produkte temporär deaktivieren und nicht im Shop anziegen</span><hr style={{ borderTop: '2px solid black', borderRadius: '5px'}}/>
